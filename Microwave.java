@@ -36,6 +36,8 @@ final class Microwave {
     private static final double MULTIPLIERTHREE = 2.0;
     /** Maximum quantity amount.*/
     private static final int MAXIMUMAMOUNT = 3;
+    /** Minimum quantity amount.*/
+    private static final int MINIMUMAMOUNT = 1;
 
     public static void main(final String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -61,7 +63,7 @@ final class Microwave {
         System.out.print("How many are you cooking? (max: 3): ");
         try {
             int amount = Integer.parseInt(scanner.nextLine());
-            if (amount < 1 || amount > 3) {
+            if (amount < MINIMUMAMOUNT || amount >  MAXIMUMAMOUNT) {
                 System.out.println("The quantity must be 1 and 3.");
             } else {
                 // Adjust heating time on quantity
