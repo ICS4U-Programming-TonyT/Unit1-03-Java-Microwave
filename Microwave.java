@@ -59,7 +59,7 @@ final class Microwave {
         System.out.print("How many are you cooking? (max: 3): ");
         try {
             int amount = Integer.parseInt(scanner.nextLine());
-            if (amount < 1 || amount > 3) {
+            if (amount < 1f || amount > 3f) {
                 System.out.println("The quantity must be 1 and 3.");
             } else {
                 // Adjust heating time on quantity
