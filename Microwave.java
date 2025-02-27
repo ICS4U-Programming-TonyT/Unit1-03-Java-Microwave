@@ -38,6 +38,8 @@ final class Microwave {
     private static final int MAXIMUMAMOUNT = 3;
     /** Minimum quantity amount.*/
     private static final int MINIMUMAMOUNT = 1;
+    /** Amount to divide for Minutes and Seconds.*/
+    private static final int TIMEDIVIDE = 60;
 
     public static void main(final String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -68,12 +70,12 @@ final class Microwave {
             } else {
                 // Adjust heating time on quantity
                 double multiplier = (amount == 2) ? MULTIPLIERTWO
-                : (amount == 3) ? MULTIPLIERTHREE : 1;
+                : (amount == MAXIMUMAMOUNT) ? MULTIPLIERTHREE : 1;
                 int totalTime = (int) (baseTime * multiplier);
 
                 // Converting time to minutes and seconds
-                int minutes = totalTime / 60;
-                int seconds = totalTime % 60;
+                int minutes = totalTime / TIMEDIVIDE;
+                int seconds = totalTime % TIMEDIVIDE;
 
                 // Displaying result
                 System.out.println("The total heating time is: "
